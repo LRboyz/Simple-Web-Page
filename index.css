@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f5f8f9;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background: #FFF;
+}
+
+header .nav {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .nav .logo {
+    margin-top: 30px;
+    width: 105px;
+    height: 30px;
+    background: #f92525;
+    text-align: center;
+    color: white;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+header .nav .right {
+    display: flex;
+}
+
+header .nav .right i {
+    margin-top: 42px;
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+header .nav .right .logout {
+    width: 110px;
+    height: 40px;
+    background: #f92525;
+    text-align: center;
+    color: white;
+    line-height: 40px;
+    margin-top: 30px;
+    margin-left: 40px;
+    font-size: 13px;
+}
+
+.navlist {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.navlist .left p:nth-child(1) {
+    font-size: 30px;
+    color: #262b2e;
+    margin-top: 65px;
+    margin-bottom: 10px;
+}
+
+.navlist .left p:nth-child(2) {
+    font-size: 15px;
+    color: #262b2e;
+}
+
+.navlist .right ul {
+    display: flex;
+}
+
+.navlist .right ul li {
+    list-style: none;
+    margin-right: 28px;
+    font-size: 13px;
+    color: #262b2e;
+}
+
+.navlist .right ul li {
+    list-style: none;
+    margin-right: 28px;
+    font-size: 13px;
+    color: #262b2e;
+}
+
+.navlist .right ul li:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.echarts {
+    max-width: 1140px;
+    margin: 47px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.echarts .ech_left {
+    width: 560px;
+    height: 290px;
+    background: #FFF;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.echarts .ech_left img {
+    width: 100%;
+    height: 100%;
+}
+
+.echarts .ech_right {
+    width: 560px;
+    height: 290px;
+    background: #FFF;
+    box-sizing: border-box;
+}
+
+.echarts .ech_right .right_head {
+    display: flex;
+    justify-content: space-between;
+    height: 110px;
+    border-bottom: 1px solid #ccc;
+}
+
+.echarts .ech_right .right_head p {
+    font-size: 18px;
+    line-height: 110px;
+    margin-left: 50px;
+}
+
+.echarts .ech_right .right_head .view {
+    width: 95px;
+    height: 40px;
+    font-size: 13px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    margin-right: 50px;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.echarts .ech_right .right_bott {
+    display: flex;
+    justify-content: space-between;
+}
+
+.echarts .ech_right .right_bott .time {
+    margin: 25px 50px 0 50px;
+}
+
+.echarts .ech_right .right_bott .time p {
+    margin-top: 35px;
+}
+
+.echarts .ech_right .right_bott .username {
+    margin-top: 25px;
+}
+
+.echarts .ech_right .right_bott .username p {
+    margin-top: 35px;
+}
+
+.echarts .ech_right .right_bott .status {
+    margin: 25px 50px 0 150px;
+}
+
+.echarts .ech_right .right_bott .status .solved {
+    width: 65px;
+    height: 30px;
+    float: right;
+    font-size: 13px;
+    line-height: 30px;
+    margin-top: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    background: #5dd054;
+    border-radius: 4px;
+}
+
+.ech_data {
+    max-width: 1140px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ech_data h3 {
+    padding-top: 30px;
+}
+
+.ech_data .data_top {
+    width: 100%;
+    height: 350px;
+    background: #fff;
+}
+
+.ech_data .data_left {
+    margin-top: 20px;
+    width: 560px;
+    height: 375px;
+    background: #fff;
+}
+
+.ech_data .data_right {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 560px;
+    height: 375px;
+    background: #FFF;
+}
+
+footer {
+    width: 100%;
+    height: 290px;
+    margin-top: 50px;
+    background: #202124;
+    position: relative;
+    display: flex;
+}
+
+footer .fbox {
+    min-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+}
+
+footer .fbox .foot_left {
+    flex-basis: 180px;
+}
+
+footer .fbox .foot_left .foot_logo {
+    width: 105px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    font-size: 12px;
+    background: #f92525;
+    margin-top: 80px;
+}
+
+footer .fbox .foot_right {
+    flex: 1;
+    display: flex;
+}
+
+footer .fbox .foot_right .footbox {
+    margin-top: 80px;
+    margin-right: 110px;
+}
+
+footer .fbox .foot_right .footbox p {
+    color: white;
+    font-size: 13px;
+}

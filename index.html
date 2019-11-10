@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="nav">
+            <div class="logo">LOGO</div>
+            <div class="right">
+                <i><img src="./images/settings.png" alt=""></i>
+                <i><img src="./images/bell.png" alt=""></i>
+                <div class="logout">Log Out</div>
+            </div>
+        </div>
+    </header>
+    <div class="navlist">
+        <div class="left">
+            <p>Audience Overview</p>
+            <p>Roseville CA</p>
+        </div>
+        <div class="right">
+            <ul>
+                <li>DASHBOARD</li>
+                <li>PROJECTS</li>
+                <li>CALENDAR</li>
+                <li>MAILBOX</li>
+                <li>SETTINGS</li>
+            </ul>
+        </div>
+    </div>
+    <div class="echarts">
+        <div class="ech_left">
+            <img src="./images/picture.jpg">
+        </div>
+        <div class="ech_right">
+            <div class="right_head">
+                <p>support Requests</p>
+                <div class="view">View All</div>
+            </div>
+            <div class="right_bott">
+                <div class="time">
+                    <h3>TIME</h3>
+                    <P>9:45pm</P>
+                    <P>9:45pm</P>
+                </div>
+                <div class="username">
+                    <h3>USER NAME</h3>
+                    <P>info@design.com</P>
+                    <P>info@design.com</P>
+                </div>
+                <div class="status">
+                    <h3>STATUS</h3>
+                    <div class="solved">solved</div>
+                    <div class="solved">solved</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ech_data">
+        <div class="data_top">
+            <h3>曲线图数据显示</h3>
+            <div id="line" style="width: 1100px;height: 300px;margin: 0 auto;"></div>
+        </div>
+        <div class="data_left">
+            <h3>饼状图数据展示</h3>
+            <div id="pie" style="width: 560px;height: 300px;margin: 0 auto;"></div>
+        </div>
+        <div class="data_right">
+            <h3>柱状图数据展示</h3>
+            <div id="column" style="width: 560px;height: 300px;margin: 0 auto;"></div>
+        </div>
+    </div>
+    <footer>
+        <div class="fbox">
+            <div class="foot_left">
+                <div class="foot_logo">LOGO</div>
+            </div>
+            <div class="foot_right">
+                <div class="footbox">
+                    <p>NEWS</p>
+                    <p>CHANNELS</p>
+                    <p>OVERVIEW</p>
+                    <p>TIMELINE</p>
+                </div>
+                <div class="footbox">
+                    <p>SPORT</p>
+                    <p>CULTURE</p>
+                    <p>NATURE</p>
+                    <p>MUSIC</p>
+                </div>
+                <div class="footbox">
+                    <p>WEATHER</p>
+                    <p>AUTOS</p>
+                    <p>LOCAL</p>
+                    <p>SHOP</p>
+                </div>
+                <div class="footbox">
+                    <p>FUTURE</p>
+                    <p>FOOD</p>
+                    <p>EARTH</p>
+                    <p>TV</p>
+                </div>
+                <div class="footbox">
+                    <p>TRAVEL</p>
+                    <p>RADIO</p>
+
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+<script src="./js/line.js"></script>
+<script src="./js/pie.js"></script>
+<script src="./js/column.js"></script>
+
+</html>
