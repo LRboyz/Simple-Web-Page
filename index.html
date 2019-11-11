@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="./index.css">
     <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.min.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
         </div>
         <div class="right">
             <ul>
-                <li>DASHBOARD</li>
+                <li class="bd-bottom">DASHBOARD</li>
                 <li>PROJECTS</li>
                 <li>CALENDAR</li>
                 <li>MAILBOX</li>
@@ -38,7 +40,26 @@
     </div>
     <div class="echarts">
         <div class="ech_left">
-            <img src="./images/picture.jpg">
+            <div id="banner">
+                <div class="pic">
+                    <div class="picImg"><img src="./images/pro1.jpg" width="520" height="280" alt="" /></div>
+                    <div class="picImg"><img src="./images/pro2.jpg" width="520" height="280" alt="" /></div>
+                    <div class="picImg"><img src="./images/pro3.jpg" width="520" height="280" alt="" /></div>
+                    <div class="picImg"><img src="./images/pro4.jpg" width="520" height="280" alt="" /></div>
+                    <div class="picImg"><img src="./images/pro5.jpg" width="520" height="280" alt="" /></div>
+                </div>
+                <ul class="tabs">
+                    <li class="bg"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="btn btn1">&lt;</div>
+                <div class="btn btn2">&gt;</div>
+            </div>
+
+
         </div>
         <div class="ech_right">
             <div class="right_head">
@@ -119,8 +140,144 @@
     </footer>
 
 </body>
-<script src="./js/line.js"></script>
-<script src="./js/pie.js"></script>
-<script src="./js/column.js"></script>
+
+<script src="./js//script.js"></script>
+<script>
+    window.onload = function() {
+        //封装请求数据方法
+        function getData(url, params) {
+            return new Promise((resolve, reject) => {
+                axios.get(url, {
+                    params: params
+                }).then(res => {
+                    resolve(res.data);
+                }).catch(err => {
+                    reject(err.data)
+                })
+            });
+        }
+        //曲线图
+        var lineChart = echarts.init(document.getElementById('line'));
+        getData('https://edu.telking.com/api/?type=month').then(res => {
+            console.log(res.data.series);
+            lineChart.setOption({
+                xAxis: {
+                    type: 'category',
+                    data: res.data.xAxis,
+                    axisLine: {
+                        lineStyle: {
+                            type: 'dashed',
+                            width: 1
+                        }
+                    },
+
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            type: 'dashed',
+                        }
+                    }
+                },
+                series: [{
+                    data: res.data.series,
+                    type: 'line',
+                    smooth: true,
+                    lineStyle: {
+                        normal: {
+                            color: '#4d8aee',
+                            type: 'solid'
+                        }
+                    },
+                    areaStyle: {
+                        color: '#f3f6fe'
+                    },
+                    itemStyle: {
+                        normal: {
+                            // 拐点上显示数值
+                            label: {
+                                show: true,
+                                color: '#4d8aee'
+                            },
+                            borderColor: '#4d8aee', // 拐点边框颜色
+                            lineStyle: {
+                                width: 2, // 设置线宽
+                                type: 'solid' //'dotted'虚线 'solid'实线
+                            }
+                        }
+                    }
+                }]
+            });
+        })
+
+
+        //饼状图
+        var myChart = echarts.init(document.getElementById('pie'));
+        getData('https://edu.telking.com/api/?type=week').then(res => {
+            const seriesData = res.data.xAxis.map((ret, index) => {
+                    return {
+                        name: ret,
+                        value: res.data.series[index]
+                    }
+                })
+                // console.log(seriesData);
+            myChart.setOption({
+                series: [{
+                    type: "pie",
+                    data: seriesData
+                }]
+            });
+
+        })
+
+        //柱状图
+        var columnChart = echarts.init(document.getElementById('column'));
+        getData('https://edu.telking.com/api/?type=week').then(res => {
+            console.log(res)
+            columnChart.setOption({
+                title: {
+                    text: "商品数",
+                    textStyle: {
+                        fontSize: 14
+                    },
+                    padding: [33, 10, 10, 22]
+                },
+                color: ['#4587f0'],
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: res.data.xAxis,
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }],
+                yAxis: [{
+                    type: 'value'
+                }],
+                series: [{
+                    name: '直接访问',
+                    type: 'bar',
+                    barWidth: '30%',
+                    data: res.data.series
+                }]
+            });
+
+        })
+
+        columnChart.setOption(option);
+    }
+</script>
 
 </html>

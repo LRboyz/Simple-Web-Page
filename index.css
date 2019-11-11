@@ -92,10 +92,13 @@ header .nav .right .logout {
     color: #262b2e;
 }
 
-.navlist .right ul li:nth-child(1) {
+.navlist .right ul li {
     width: 100%;
     height: 100%;
     padding-bottom: 10px;
+}
+
+.bd-bottom {
     border-bottom: 2px solid #ccc;
 }
 
@@ -112,11 +115,68 @@ header .nav .right .logout {
     background: #FFF;
     box-sizing: border-box;
     padding: 10px;
+    position: relative;
 }
 
-.echarts .ech_left img {
-    width: 100%;
-    height: 100%;
+#banner {
+    width: 520px;
+    height: 280px;
+    position: absolute;
+    top: 50%;
+    margin-top: -140px;
+    left: 50%;
+    margin-left: -260px;
+}
+
+.pic img {
+    position: absolute;
+}
+
+.tabs {
+    position: absolute;
+    bottom: 10px;
+    left: 200px;
+}
+
+.tabs li {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    float: left;
+    margin-left: 5px;
+    border-radius: 100%;
+    list-style: none;
+}
+
+.btn {
+    width: 30px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, .8);
+    color: red;
+}
+
+.btn1 {
+    left: 0;
+}
+
+.btn2 {
+    right: 0;
+}
+
+.bg {
+    background-color: red;
 }
 
 .echarts .ech_right {
