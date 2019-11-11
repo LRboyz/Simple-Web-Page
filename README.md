@@ -1,4 +1,4 @@
-## 纯原生html + css 写的一个界面，运动了 Echarts 以及 axios 请求数据 并渲染，轮播图采用jquery 手写
+## 纯原生html + css 写的一个界面，运用了 Echarts 以及 axios 请求数据 并渲染，轮播图采用jquery 手写
 
 ### 效果图:
 
